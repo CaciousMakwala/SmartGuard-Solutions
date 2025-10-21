@@ -1,0 +1,323 @@
+/* Reset and Base */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: white;
+  color: #333;
+  overflow-x: hidden;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.home-container {
+  padding: 2rem;
+  animation: fadeIn 1.2s ease-in-out;
+  max-width: 1200px;
+  max-height: 100vh;
+  overflow-y: auto;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  font-family: 'Poppins', 'Segoe UI', Roboto, sans-serif;
+  position: relative;
+}
+
+.call-request-toggle.left {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: red;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 10px;
+  background-color: rgba(255, 0, 0, 0.1);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(255, 0, 0, 0.3);
+  z-index: 3000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.call-request-toggle.left:hover {
+  background-color: red;
+  color: white;
+}
+
+/* CSS variables for icon colors */
+:root {
+  --icon-color-1: #ff0000;
+  --icon-color-2: #00ff00;
+  --icon-color-3: #c5c29c;
+  --icon-color-4: #ffa500;
+  --icon-color-5: #800080;
+  --icon-color-6: #008080;
+  --icon-color-7: #ffc0cb;
+  --icon-color-8: #000080;
+  --icon-color-9: #808000;
+}
+
+/* Animate icon colors */
+@keyframes iconColorCycle {
+  0% { color: var(--icon-color-1); }
+  11% { color: var(--icon-color-2); }
+  22% { color: var(--icon-color-3); }
+  33% { color: var(--icon-color-4); }
+  44% { color: var(--icon-color-5); }
+  55% { color: var(--icon-color-6); }
+  66% { color: var(--icon-color-7); }
+  77% { color: var(--icon-color-8); }
+  88% { color: var(--icon-color-9); }
+  100% { color: var(--icon-color-1); }
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: iconColorCycle 27s linear infinite;
+  transition: transform 0.5s ease;
+  color: var(--icon-color-1);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  width: 80px;
+  height: 80px;
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #3498db;
+  border-radius: 50%;
+  margin: 100px auto;
+  animation: spin 1s linear infinite;
+}
+
+/* Grid Layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  
+}
+
+/* Service Cards */
+.service-card {
+  background: linear-gradient(to right, white, #a7a297);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  box-shadow: -2px 0 8px rgb(15, 1, 136);
+  
+  /* Width Controls */
+  width: 880%;
+  max-width: 290px; /* reduced size for better fit */
+  margin: auto; /* center it if in a flex or block container */
+}
+
+
+.service-card::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3;
+  left: 4;
+  width: 90%;
+  height: 90%;
+  border: 2px solid rgb(24, 161, 161);
+  border-radius: 40px;
+  pointer-events: none;
+ 
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(145deg, #f0f0f0, #ffffff);
+}
+
+/* Icon Styling */
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.2) rotate(8deg);
+}
+
+/* Fade animation for icon colors */
+.fade {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #e3e9e9;
+  position: relative;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #737471 0%, #437c61 100%);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(111, 134, 214, 0.4);
+  z-index: 1;
+  overflow: hidden;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fade-in {
+  opacity: 3;
+  animation: slideInOut 13s ease-in-out infinite;
+  animation-fill-mode: forwards;
+}
+
+.fade-out {
+  opacity: 3;
+  animation: slideInOut 13s ease-in-out infinite;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes slideInOut {
+  0%, 100% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transform: translateX(100%);
+  }
+  50% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.service-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #067083; /* Added color styling */
+}
+
+.service-description {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  background: linear-gradient(to right, white, #a7a297);
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.social-icons a {
+  color: #333;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .services-grid {
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .service-card {
+    padding: 1rem;
+  }
+}
+
+.follow-us-text {
+  color: #007bff; /* Example color: blue, adjust as needed */
+  font-weight: bold;
+}
+
+.content-description h3 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 4px solid;
+  border-image-slice: 1;
+  border-width: 4px;
+  border-image-source: linear-gradient(270deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff, #ff1493, #00ced1, #ff4500);
+  color: #0eabc0;
+  text-align: left;
+  animation: borderColorCycle 10s linear infinite;
+}
+
+@keyframes borderColorCycle {
+  0% {
+    border-image-source: linear-gradient(270deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff, #ff1493, #00ced1, #ff4500);
+  }
+  10% {
+    border-image-source: linear-gradient(270deg, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff, #ff1493, #00ced1, #ff4500, #ff0000);
+  }
+  20% {
+    border-image-source: linear-gradient(270deg, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff, #ff1493, #00ced1, #ff4500, #ff0000, #ff7f00);
+  }
+  30% {
+    border-image-source: linear-gradient(270deg, #00ff00, #0000ff, #4b0082, #8f00ff, #ff1493, #00ced1, #ff4500, #ff0000, #ff7f00, #ffff00);
+  }
+  40% {
+    border-image-source: linear-gradient(270deg, #0000ff, #4b0082, #8f00ff, #ff1493, #00ced1, #ff4500, #ff0000, #ff7f00, #ffff00, #00ff00);
+  }
+  50% {
+    border-image-source: linear-gradient(270deg, #4b0082, #8f00ff, #ff1493, #00ced1, #ff4500, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff);
+  }
+  60% {
+    border-image-source: linear-gradient(270deg, #8f00ff, #ff1493, #00ced1, #ff4500, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082);
+  }
+  70% {
+    border-image-source: linear-gradient(270deg, #ff1493, #00ced1, #ff4500, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff);
+  }
+  80% {
+    border-image-source: linear-gradient(270deg, #00ced1, #ff4500, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff, #ff1493);
+  }
+  90% {
+    border-image-source: linear-gradient(270deg, #ff4500, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff, #ff1493, #00ced1);
+  }
+  100% {
+    border-image-source: linear-gradient(270deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff, #ff1493, #00ced1, #ff4500);
+  }
+}

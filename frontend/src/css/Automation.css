@@ -1,0 +1,21 @@
+.automation-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #abb5c0, #029e84);
+  color: #fff;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.automation-container h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.automation-container p {
+  color: #e0f7fa;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}

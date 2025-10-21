@@ -1,0 +1,146 @@
+/* Reset and Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Header Layout */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, white, #a7a297);
+  padding: 0.8rem 1.2rem;
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  box-shadow: -5px 0 8px rgb(21, 2, 192);
+}
+
+/* Left Section (Logo) */
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 45px;
+  height: auto;
+}
+
+/* Center Section (Company Name) */
+.center-section {
+  flex: 1;
+  text-align: center;
+}
+
+.company-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(14, 166, 177);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  white-space: nowrap;
+}
+
+/* Right Section (Hamburger Menu) */
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-menu {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger-menu .bar {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(19, 147, 170);
+  border-radius: 3px;
+}
+
+/* Slide-in Side Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  max-width: 300px;
+  height: 100vh;
+  background: linear-gradient(to right, white, #a7a297);
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.25);
+  padding: 2rem 1.5rem;
+  z-index: 2000;
+  animation: slideIn 0.3s ease forwards;
+  border-left: 2px solid #0497b1;
+  border-radius: 0 0 0 10px;
+  overflow-y: auto;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.close-button {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.menu-item {
+  font-size: 1.2rem;
+  color: #0497b1;
+  text-decoration: none;
+  transition: 0.3s;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: rgba(4, 151, 177, 0.1);
+  box-shadow: 0 2px 6px rgba(4, 151, 177, 0.2);
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  color: #0074D9;
+}
+
+/* Responsive Fix */
+@media (max-width: 600px) {
+  .company-name {
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    width: 40px;
+  }
+
+  .hamburger-menu {
+    display: flex !important;
+  }
+
+  .hamburger-menu .bar {
+    width: 22px;
+  }
+}
