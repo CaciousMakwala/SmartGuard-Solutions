@@ -1,0 +1,26 @@
+# Node and npm
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Build and cache files
+dist/
+build/
+.cache/
+*.log
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+
+# System files
+.DS_Store
+Thumbs.db
+
+# PHP / Backend (if using Slim or Laravel)
+vendor/
+.idea/
+.vscode/
